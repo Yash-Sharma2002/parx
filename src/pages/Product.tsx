@@ -36,7 +36,7 @@ export default function Product() {
           <img
             src={productData.img}
             alt={productData.name}
-            className="w-full"
+            className="h-[80vh] w-fit mx-auto "
           />
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function ProductLinear({ data }: any) {
               return (
                 <div
                   key={idx}
-                  className="flex flex-col md:flex-row justify-center md:justify-start  items-start mt-8"
+                  className="flex flex-col md:flex-row justify-center md:justify-start  items-start mt-8 "
                 >
                     <img src={product.img} alt={product.name} className={`${item.url!=="door-handles" && item.url!=="door-stopper"? "w-[250px]":"h-[250px]"}`} style={{
                         boxShadow: "1px 1px 10px 1px rgba(0, 0, 0, 0.2)"

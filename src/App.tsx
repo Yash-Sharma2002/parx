@@ -17,19 +17,20 @@ function App() {
         <Navbar />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
 
             {/* type means the type of products we are showing of same kind */}
             {ProductData.map((item, index) => {
               return (
                 <Route
                   key={index}
+                  exact
                   path={`/shop=${item.url}`}
                   element={<Shop />}
                 />
               );
             })}
-            <Route path="/shop=all" element={<Shop />} />
+            <Route exact path="/shop=all" element={<Shop />} />
 
             {/* id means the id of the product */}
             {ProductData.map((item, index) => {
@@ -39,6 +40,7 @@ function App() {
                     return (
                       <Route
                         key={idx}
+                        exact
                         path={`/shop=${item.url}/product=${product.id}`}
                         element={<Product />}
                       />

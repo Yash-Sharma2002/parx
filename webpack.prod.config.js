@@ -1,11 +1,14 @@
-const path = require("path");
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const path = require('path');
 
 module.exports = {
-    mode: "development",
-    entry: path.resolve(__dirname, "./src/index.tsx"),
-    devtool: "inline-source-map",
+    mode: 'production',
+    entry: './src/index.tsx',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
     module: {
         rules: [
             {
@@ -39,17 +42,12 @@ module.exports = {
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
-    devServer: {
-        historyApiFallback: true,
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'public/index.html'
         })
     ],
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: '/',
-    },
+    plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin()
+    ]
 };

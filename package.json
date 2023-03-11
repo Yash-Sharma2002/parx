@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.js --watch",
-    "tsc": "tsc --watch"
+    "tsc": "tsc --watch",
+    "prod-build": "webpack --config webpack.prod.config.js --mode production"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "autoprefixer": "^10.4.13",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
